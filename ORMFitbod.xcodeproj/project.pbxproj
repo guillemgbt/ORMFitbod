@@ -25,6 +25,7 @@
 		C98ED496241953D300601BB4 /* TableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED494241953D300601BB4 /* TableViewCell+Extensions.swift */; };
 		C98ED499241954B900601BB4 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED498241954B900601BB4 /* UIViewController+Ext.swift */; };
 		C98ED49D2419568300601BB4 /* SimpleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED49C2419568300601BB4 /* SimpleObservable.swift */; };
+		C98ED49F2419621E00601BB4 /* SimpleObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED49E2419621E00601BB4 /* SimpleObservableTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C98ED494241953D300601BB4 /* TableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		C98ED498241954B900601BB4 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		C98ED49C2419568300601BB4 /* SimpleObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleObservable.swift; sourceTree = "<group>"; };
+		C98ED49E2419621E00601BB4 /* SimpleObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleObservableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				C916F77824180F0300133FED /* ORMFitbodTests.swift */,
 				C916F77A24180F0300133FED /* Info.plist */,
+				C98ED49E2419621E00601BB4 /* SimpleObservableTests.swift */,
 			);
 			path = ORMFitbodTests;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98ED49F2419621E00601BB4 /* SimpleObservableTests.swift in Sources */,
 				C916F77924180F0300133FED /* ORMFitbodTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

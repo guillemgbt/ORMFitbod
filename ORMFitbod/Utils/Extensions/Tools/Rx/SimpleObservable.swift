@@ -10,7 +10,7 @@ import Foundation
 
 class SimpleObservable<T>: NSObject {
     
-    var value: T {
+    private var value: T {
         didSet {
             self.onUpdate?(self.value)
         }
@@ -18,8 +18,17 @@ class SimpleObservable<T>: NSObject {
     
     private var onUpdate: ((T)->())? = nil
     
+    
     init(value: T) {
         self.value = value
+    }
+    
+    func accept(_ value: T) {
+        self.value = value
+    }
+    
+    func current() -> T {
+        return self.value
     }
     
     func observe(_ onUpdate: @escaping ((T)->())) {
