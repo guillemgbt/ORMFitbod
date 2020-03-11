@@ -12,6 +12,15 @@ enum WorkoutFile: String {
     case workout1 = "workoutData1"
 }
 
+
+/** EXAMPLE
+ 
+ Oct 11 2017,Back Squat,1,10,45
+ Oct 11 2017,Back Squat,1,10,135
+ Oct 11 2017,Back Squat,1,3,185
+ 
+ */
+
 class WorkoutParser: NSObject {
     
     func parse(file: WorkoutFile = .workout1) {
@@ -20,9 +29,26 @@ class WorkoutParser: NSObject {
             return //RequestObject(nil, error, message)
         }
             
-        while let line = stream.nextLine() {
-            print(line)
+        while let line = stream.nextLine()?.components(separatedBy: ",") {
+            
+            guard let date = line[safe: 0]?.toDate(),
+                let name = line[safe: 1],
+                let sets = line[safe: 1]?.toInt(),
+                let reps = line[safe: 1]?.toInt(),
+                let weight = line[safe: 1]?.toInt() else {
+                    
+                    Utils.printError(sender: self, message: "Incorrect formatted workout unit found. ")
+                    
+                    return
+            }
+            
+            
+            
+            
+            
         }
+        
+        
     }
     
     private func prepareStream(for file: WorkoutFile) -> StreamReader? {

@@ -45,7 +45,6 @@ class SimpleObservableTests: XCTestCase {
         
         let expect = expectation(description: "signal in background thread")
 
-        
         observable.observeInUI { [weak self] (flag) in
             //To ensure we are checking "true" trigger and main thread
             self?.boolTest = Thread.isMainThread && flag

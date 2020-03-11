@@ -11,7 +11,6 @@
 		C916F76424180F0200133FED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F76324180F0200133FED /* SceneDelegate.swift */; };
 		C916F76B24180F0300133FED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C916F76A24180F0300133FED /* Assets.xcassets */; };
 		C916F76E24180F0300133FED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C916F76C24180F0300133FED /* LaunchScreen.storyboard */; };
-		C916F77924180F0300133FED /* ORMFitbodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F77824180F0300133FED /* ORMFitbodTests.swift */; };
 		C916F78424180F0300133FED /* ORMFitbodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F78324180F0300133FED /* ORMFitbodUITests.swift */; };
 		C916F79C2418114D00133FED /* ExerciceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F79B2418114D00133FED /* ExerciceListViewModel.swift */; };
 		C916F79F2418132300133FED /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F79E2418132300133FED /* MainNavigationController.swift */; };
@@ -26,6 +25,12 @@
 		C98ED499241954B900601BB4 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED498241954B900601BB4 /* UIViewController+Ext.swift */; };
 		C98ED49D2419568300601BB4 /* SimpleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED49C2419568300601BB4 /* SimpleObservable.swift */; };
 		C98ED49F2419621E00601BB4 /* SimpleObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED49E2419621E00601BB4 /* SimpleObservableTests.swift */; };
+		C98ED4A124196CBB00601BB4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A024196CBB00601BB4 /* Utils.swift */; };
+		C98ED4A324196E3900601BB4 /* Exercice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A224196E3900601BB4 /* Exercice.swift */; };
+		C98ED4A524196E7500601BB4 /* UnitRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A424196E7500601BB4 /* UnitRecord.swift */; };
+		C98ED4A724196F0C00601BB4 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A624196F0C00601BB4 /* DailyRecord.swift */; };
+		C98ED4AA2419707500601BB4 /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A92419707500601BB4 /* Collection+Ext.swift */; };
+		C98ED4AD241974C900601BB4 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4AC241974C900601BB4 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +58,6 @@
 		C916F76D24180F0300133FED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C916F76F24180F0300133FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C916F77424180F0300133FED /* ORMFitbodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORMFitbodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C916F77824180F0300133FED /* ORMFitbodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORMFitbodTests.swift; sourceTree = "<group>"; };
 		C916F77A24180F0300133FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C916F77F24180F0300133FED /* ORMFitbodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORMFitbodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C916F78324180F0300133FED /* ORMFitbodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORMFitbodUITests.swift; sourceTree = "<group>"; };
@@ -71,6 +75,12 @@
 		C98ED498241954B900601BB4 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		C98ED49C2419568300601BB4 /* SimpleObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleObservable.swift; sourceTree = "<group>"; };
 		C98ED49E2419621E00601BB4 /* SimpleObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleObservableTests.swift; sourceTree = "<group>"; };
+		C98ED4A024196CBB00601BB4 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C98ED4A224196E3900601BB4 /* Exercice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercice.swift; sourceTree = "<group>"; };
+		C98ED4A424196E7500601BB4 /* UnitRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitRecord.swift; sourceTree = "<group>"; };
+		C98ED4A624196F0C00601BB4 /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
+		C98ED4A92419707500601BB4 /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
+		C98ED4AC241974C900601BB4 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +148,6 @@
 		C916F77724180F0300133FED /* ORMFitbodTests */ = {
 			isa = PBXGroup;
 			children = (
-				C916F77824180F0300133FED /* ORMFitbodTests.swift */,
 				C916F77A24180F0300133FED /* Info.plist */,
 				C98ED49E2419621E00601BB4 /* SimpleObservableTests.swift */,
 			);
@@ -167,6 +176,9 @@
 		C916F79224180F7200133FED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C98ED4A224196E3900601BB4 /* Exercice.swift */,
+				C98ED4A624196F0C00601BB4 /* DailyRecord.swift */,
+				C98ED4A424196E7500601BB4 /* UnitRecord.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,8 +195,9 @@
 		C916F79424180FAD00133FED /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C98ED49A2419563D00601BB4 /* Tools */,
 				C98ED4902419535E00601BB4 /* Extensions */,
-				C98ED48F2419535400601BB4 /* StreamReader */,
+				C98ED4A024196CBB00601BB4 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -233,20 +246,21 @@
 		C98ED4902419535E00601BB4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C98ED49A2419563D00601BB4 /* Tools */,
+				C98ED4AB2419744900601BB4 /* String */,
+				C98ED4A82419706400601BB4 /* Collection */,
 				C98ED4972419549B00601BB4 /* UIViewController */,
-				C98ED491241953D300601BB4 /* TableView */,
+				C98ED491241953D300601BB4 /* UITableView */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		C98ED491241953D300601BB4 /* TableView */ = {
+		C98ED491241953D300601BB4 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
 				C98ED492241953D300601BB4 /* TableViewExt.swift */,
 				C98ED493241953D300601BB4 /* TableViewCell */,
 			);
-			path = TableView;
+			path = UITableView;
 			sourceTree = "<group>";
 		};
 		C98ED493241953D300601BB4 /* TableViewCell */ = {
@@ -269,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				C98ED49B2419564B00601BB4 /* Rx */,
+				C98ED48F2419535400601BB4 /* StreamReader */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -279,6 +294,22 @@
 				C98ED49C2419568300601BB4 /* SimpleObservable.swift */,
 			);
 			path = Rx;
+			sourceTree = "<group>";
+		};
+		C98ED4A82419706400601BB4 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				C98ED4A92419707500601BB4 /* Collection+Ext.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		C98ED4AB2419744900601BB4 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				C98ED4AC241974C900601BB4 /* String+Ext.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,17 +444,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98ED4AD241974C900601BB4 /* String+Ext.swift in Sources */,
 				C916F79F2418132300133FED /* MainNavigationController.swift in Sources */,
 				C916F7AB24181AC000133FED /* WorkoutParser.swift in Sources */,
+				C98ED4A524196E7500601BB4 /* UnitRecord.swift in Sources */,
 				C98ED495241953D300601BB4 /* TableViewExt.swift in Sources */,
+				C98ED4A324196E3900601BB4 /* Exercice.swift in Sources */,
 				C98ED499241954B900601BB4 /* UIViewController+Ext.swift in Sources */,
 				C916F76224180F0200133FED /* AppDelegate.swift in Sources */,
+				C98ED4A124196CBB00601BB4 /* Utils.swift in Sources */,
 				C916F76424180F0200133FED /* SceneDelegate.swift in Sources */,
+				C98ED4AA2419707500601BB4 /* Collection+Ext.swift in Sources */,
 				C916F7B5241823B600133FED /* StreamReader.swift in Sources */,
 				C916F79C2418114D00133FED /* ExerciceListViewModel.swift in Sources */,
 				C98ED49D2419568300601BB4 /* SimpleObservable.swift in Sources */,
 				C98ED496241953D300601BB4 /* TableViewCell+Extensions.swift in Sources */,
 				C916F7A924181AAA00133FED /* ExerciceService.swift in Sources */,
+				C98ED4A724196F0C00601BB4 /* DailyRecord.swift in Sources */,
 				C916F7AF24181EDF00133FED /* ExerciceListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +470,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98ED49F2419621E00601BB4 /* SimpleObservableTests.swift in Sources */,
-				C916F77924180F0300133FED /* ORMFitbodTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
