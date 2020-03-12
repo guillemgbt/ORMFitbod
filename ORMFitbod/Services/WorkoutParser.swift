@@ -33,10 +33,12 @@ struct WorkoutComponents {
 
 class WorkoutParser: NSObject {
     
-    func parse(file: WorkoutFile = .workout1) {
+    func parse(file: WorkoutFile = .workout1) -> PromiseObject<[Exercice]> {
         
         guard let stream = prepareStream(for: file) else {
-            return //RequestObject(nil, error, message)
+            return PromiseObject(state: .error,
+                                 object: nil,
+                                 message: "Workout file not found.")
         }
         
         var exercices = [Exercice]()
@@ -45,42 +47,55 @@ class WorkoutParser: NSObject {
             
             guard let components = self.parseLine(line) else {
                 Utils.printError(sender: self, message: "could not parse line \(line)")
-                continue
+                return PromiseObject(state: .error,
+                                    object: nil,
+                                    message: "Invalid workout file format.")
             }
             
-            if let exercice = exercices.filter({ $0.name == components.name }).first {
+            guard parseWorkoutComponents(components, exercices: &exercices) else {
+                return PromiseObject(state: .error,
+                                     object: nil,
+                                     message: "Invalid workout values.")
+            }
+        }
+            
+        return PromiseObject(state: .success,
+                             object: exercices)
+    }
+    
+    private func parseWorkoutComponents(_ components: WorkoutComponents, exercices: inout [Exercice]) -> Bool {
+        
+        if let exercice = exercices.filter({ $0.name == components.name }).first {
                 
-                if let dailyRecord = exercice.getRecord(for: components.date) {
-                    
-                    guard let unitRecord = unitRecordFrom(components) else {
-                        Utils.printError(sender: self, message: "could not create exercice from components.")
-                        continue
-                    }
-                    
-                    dailyRecord.addRecord(unitRecord)
-                    
-                } else {
-                    guard let dailyRecord = dailyRecordFrom(components) else {
-                        Utils.printError(sender: self, message: "could not create daily from \(line).")
-                        continue
-                    }
-                    
-                    exercice.addRecord(dailyRecord)
-                    
+            if let dailyRecord = exercice.getRecord(for: components.date) {
+                
+                guard let unitRecord = unitRecordFrom(components) else {
+                    Utils.printError(sender: self, message: "could not create exercice from components.")
+                    return false
                 }
                 
+                dailyRecord.addRecord(unitRecord)
                 
             } else {
-                
-                guard let exercice = exerciceFrom(components) else {
-                    Utils.printError(sender: self, message: "could not create exercice from \(line).")
-                    continue
+                guard let dailyRecord = dailyRecordFrom(components) else {
+                    Utils.printError(sender: self, message: "could not create daily from components.")
+                    return false
                 }
                 
-                exercices.append(exercice)
+                exercice.addRecord(dailyRecord)
+            }
+                
+        } else {
+            
+            guard let exercice = exerciceFrom(components) else {
+                Utils.printError(sender: self, message: "could not create exercice from components.")
+                return false
             }
             
+            exercices.append(exercice)
         }
+        
+        return true
     }
     
     private func prepareStream(for file: WorkoutFile) -> StreamReader? {
@@ -93,6 +108,7 @@ class WorkoutParser: NSObject {
         print("Could not load workout file \(file.rawValue).txt")
         return nil
     }
+    
     
     private func parseLine(_ line: String) -> WorkoutComponents? {
         let lineComponents = line.components(separatedBy: ",")
@@ -134,5 +150,6 @@ class WorkoutParser: NSObject {
                           reps: components.reps,
                           weight: components.weight)
     }
+    
 
 }

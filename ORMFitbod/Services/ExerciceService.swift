@@ -19,7 +19,10 @@ class ExerciceService: NSObject {
     }
     
     func fetchExercices() {
-        self.workoutParser.parse()
+        let obj = self.workoutParser.parse()
+        print(obj.state)
+        print(obj.message)
+        print(obj.object)
     }
 
 }
