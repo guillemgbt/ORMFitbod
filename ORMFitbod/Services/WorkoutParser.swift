@@ -10,6 +10,10 @@ import Foundation
 
 enum WorkoutFile: String {
     case workout1 = "workoutData1"
+    
+    // For testing purposes
+    case invalidWorkout = "workoutDataInvalidLine"
+    case nonExistingWorkout = "nonExistingWorkout"
 }
 
 
@@ -63,7 +67,7 @@ class WorkoutParser: NSObject {
                              object: exercices)
     }
     
-    private func parseWorkoutComponents(_ components: WorkoutComponents, exercices: inout [Exercice]) -> Bool {
+    internal func parseWorkoutComponents(_ components: WorkoutComponents, exercices: inout [Exercice]) -> Bool {
         
         if let exercice = exercices.filter({ $0.name == components.name }).first {
                 

@@ -35,6 +35,8 @@
 		C9B61D0A241AC83200BD13A4 /* PromiseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D09241AC83200BD13A4 /* PromiseObject.swift */; };
 		C9B61D0C241ACF8000BD13A4 /* DailyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D0B241ACF8000BD13A4 /* DailyRecordTests.swift */; };
 		C9B61D0E241AD17200BD13A4 /* ExerciceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D0D241AD17200BD13A4 /* ExerciceTests.swift */; };
+		C9B61D10241AF86200BD13A4 /* WorkoutParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D0F241AF86200BD13A4 /* WorkoutParserTests.swift */; };
+		C9B61D12241AFC7600BD13A4 /* workoutDataInvalidLine.txt in Resources */ = {isa = PBXBuildFile; fileRef = C9B61D11241AFC7600BD13A4 /* workoutDataInvalidLine.txt */; };
 		C9C0D1872419C00D00C4AA25 /* WorkoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0D1862419C00D00C4AA25 /* WorkoutCalculator.swift */; };
 		C9C0D18B2419C48800C4AA25 /* WorkoutCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0D18A2419C48800C4AA25 /* WorkoutCalculatorTest.swift */; };
 		C9FAB3D32419DB5600A6ADD0 /* UnitRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FAB3D22419DB5600A6ADD0 /* UnitRecordTests.swift */; };
@@ -92,6 +94,8 @@
 		C9B61D09241AC83200BD13A4 /* PromiseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseObject.swift; sourceTree = "<group>"; };
 		C9B61D0B241ACF8000BD13A4 /* DailyRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordTests.swift; sourceTree = "<group>"; };
 		C9B61D0D241AD17200BD13A4 /* ExerciceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciceTests.swift; sourceTree = "<group>"; };
+		C9B61D0F241AF86200BD13A4 /* WorkoutParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutParserTests.swift; sourceTree = "<group>"; };
+		C9B61D11241AFC7600BD13A4 /* workoutDataInvalidLine.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workoutDataInvalidLine.txt; sourceTree = "<group>"; };
 		C9C0D1862419C00D00C4AA25 /* WorkoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCalculator.swift; sourceTree = "<group>"; };
 		C9C0D18A2419C48800C4AA25 /* WorkoutCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCalculatorTest.swift; sourceTree = "<group>"; };
 		C9FAB3D22419DB5600A6ADD0 /* UnitRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitRecordTests.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				C9FAB3D22419DB5600A6ADD0 /* UnitRecordTests.swift */,
 				C9B61D0B241ACF8000BD13A4 /* DailyRecordTests.swift */,
 				C9B61D0D241AD17200BD13A4 /* ExerciceTests.swift */,
+				C9B61D0F241AF86200BD13A4 /* WorkoutParserTests.swift */,
 			);
 			path = ORMFitbodTests;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 		C916F7B124181F2000133FED /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				C9B61D11241AFC7600BD13A4 /* workoutDataInvalidLine.txt */,
 				C916F7B224181F2000133FED /* workoutData1.txt */,
 			);
 			path = resources;
@@ -464,6 +470,7 @@
 				C916F7B324181F2000133FED /* workoutData1.txt in Resources */,
 				C916F76E24180F0300133FED /* LaunchScreen.storyboard in Resources */,
 				C916F7B024181EDF00133FED /* ExerciceListViewController.xib in Resources */,
+				C9B61D12241AFC7600BD13A4 /* workoutDataInvalidLine.txt in Resources */,
 				C916F76B24180F0300133FED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9B61D10241AF86200BD13A4 /* WorkoutParserTests.swift in Sources */,
 				C98ED49F2419621E00601BB4 /* SimpleObservableTests.swift in Sources */,
 				C9C0D18B2419C48800C4AA25 /* WorkoutCalculatorTest.swift in Sources */,
 				C9B61D0E241AD17200BD13A4 /* ExerciceTests.swift in Sources */,
