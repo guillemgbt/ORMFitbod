@@ -31,6 +31,8 @@
 		C98ED4A724196F0C00601BB4 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A624196F0C00601BB4 /* DailyRecord.swift */; };
 		C98ED4AA2419707500601BB4 /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A92419707500601BB4 /* Collection+Ext.swift */; };
 		C98ED4AD241974C900601BB4 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4AC241974C900601BB4 /* String+Ext.swift */; };
+		C9C0D1872419C00D00C4AA25 /* WorkoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0D1862419C00D00C4AA25 /* WorkoutCalculator.swift */; };
+		C9C0D18B2419C48800C4AA25 /* WorkoutCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0D18A2419C48800C4AA25 /* WorkoutCalculatorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		C98ED4A624196F0C00601BB4 /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
 		C98ED4A92419707500601BB4 /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
 		C98ED4AC241974C900601BB4 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		C9C0D1862419C00D00C4AA25 /* WorkoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCalculator.swift; sourceTree = "<group>"; };
+		C9C0D18A2419C48800C4AA25 /* WorkoutCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCalculatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 			children = (
 				C916F77A24180F0300133FED /* Info.plist */,
 				C98ED49E2419621E00601BB4 /* SimpleObservableTests.swift */,
+				C9C0D18A2419C48800C4AA25 /* WorkoutCalculatorTest.swift */,
 			);
 			path = ORMFitbodTests;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 		C98ED49A2419563D00601BB4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C9C0D1852419BF9C00C4AA25 /* WorkoutCalculator */,
 				C98ED49B2419564B00601BB4 /* Rx */,
 				C98ED48F2419535400601BB4 /* StreamReader */,
 			);
@@ -310,6 +316,14 @@
 				C98ED4AC241974C900601BB4 /* String+Ext.swift */,
 			);
 			path = String;
+			sourceTree = "<group>";
+		};
+		C9C0D1852419BF9C00C4AA25 /* WorkoutCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				C9C0D1862419C00D00C4AA25 /* WorkoutCalculator.swift */,
+			);
+			path = WorkoutCalculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,6 +475,7 @@
 				C98ED496241953D300601BB4 /* TableViewCell+Extensions.swift in Sources */,
 				C916F7A924181AAA00133FED /* ExerciceService.swift in Sources */,
 				C98ED4A724196F0C00601BB4 /* DailyRecord.swift in Sources */,
+				C9C0D1872419C00D00C4AA25 /* WorkoutCalculator.swift in Sources */,
 				C916F7AF24181EDF00133FED /* ExerciceListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98ED49F2419621E00601BB4 /* SimpleObservableTests.swift in Sources */,
+				C9C0D18B2419C48800C4AA25 /* WorkoutCalculatorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
