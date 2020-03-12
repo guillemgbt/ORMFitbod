@@ -11,7 +11,7 @@ import Foundation
 class DailyRecord: NSObject {
 
     let date: Date
-    let global1RM: Int
+    let global1RM: Float
     var unitRecords = [UnitRecord]()
     
     init(date: Date, unitRecord: UnitRecord) {

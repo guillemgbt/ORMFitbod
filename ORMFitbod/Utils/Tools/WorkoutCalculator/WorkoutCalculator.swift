@@ -16,9 +16,10 @@ class WorkoutCalculator: NSObject {
     
     static func compute1RM(weight: Int, reps: Int) throws -> Float {
         
-        if weight <= 0 || reps <= 0 {
+        guard weight > 0, reps > 0 else {
             throw WorkoutCalculatorError.invalidInputValues
         }
+        
         return Float(weight)*36.0 / (37.0 - Float(reps))
     }
 }

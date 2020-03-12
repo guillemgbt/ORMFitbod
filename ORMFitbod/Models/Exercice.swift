@@ -11,7 +11,7 @@ import Foundation
 class Exercice: NSObject {
 
     let name: String
-    let global1RM: Int
+    let global1RM: Float
     var dailyRecords = [DailyRecord]()
     
     init(name: String, record: DailyRecord) {

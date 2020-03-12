@@ -10,21 +10,6 @@ import XCTest
 @testable import ORMFitbod
 
 class WorkoutCalculatorTest: XCTestCase {
-
-    override func setUp() {}
-
-    override func tearDown() {}
-    
-
-    func test1RMCalculation() {
-        let reps = 10
-        let weight = 20
-        let desiredResult = Float(26.666666)
-        
-        let result = try? WorkoutCalculator.compute1RM(weight: weight, reps: reps)
-                
-        XCTAssertEqual(result ?? 0.0, desiredResult, "Result do not match.")
-    }
     
     func test1RMWrongInput() {
         
@@ -42,6 +27,16 @@ class WorkoutCalculatorTest: XCTestCase {
         
         XCTAssertNoThrow(try WorkoutCalculator.compute1RM(weight: weight, reps: reps),
                          "With valit input it should not throw error.")
+    }
+    
+    func test1RMCalculation() {
+        let reps = 10
+        let weight = 20
+        let desiredResult = Float(26.666666)
+        
+        let result = try? WorkoutCalculator.compute1RM(weight: weight, reps: reps)
+                
+        XCTAssertEqual(result ?? 0.0, desiredResult, "Result do not match.")
     }
 
 }
