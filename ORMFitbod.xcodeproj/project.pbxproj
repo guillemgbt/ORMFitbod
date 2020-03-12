@@ -34,6 +34,7 @@
 		C9B61D07241AC0D600BD13A4 /* OneRepMaxProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D06241AC0D600BD13A4 /* OneRepMaxProvider.swift */; };
 		C9B61D0A241AC83200BD13A4 /* PromiseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D09241AC83200BD13A4 /* PromiseObject.swift */; };
 		C9B61D0C241ACF8000BD13A4 /* DailyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D0B241ACF8000BD13A4 /* DailyRecordTests.swift */; };
+		C9B61D0E241AD17200BD13A4 /* ExerciceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D0D241AD17200BD13A4 /* ExerciceTests.swift */; };
 		C9C0D1872419C00D00C4AA25 /* WorkoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0D1862419C00D00C4AA25 /* WorkoutCalculator.swift */; };
 		C9C0D18B2419C48800C4AA25 /* WorkoutCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0D18A2419C48800C4AA25 /* WorkoutCalculatorTest.swift */; };
 		C9FAB3D32419DB5600A6ADD0 /* UnitRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FAB3D22419DB5600A6ADD0 /* UnitRecordTests.swift */; };
@@ -90,6 +91,7 @@
 		C9B61D06241AC0D600BD13A4 /* OneRepMaxProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxProvider.swift; sourceTree = "<group>"; };
 		C9B61D09241AC83200BD13A4 /* PromiseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseObject.swift; sourceTree = "<group>"; };
 		C9B61D0B241ACF8000BD13A4 /* DailyRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordTests.swift; sourceTree = "<group>"; };
+		C9B61D0D241AD17200BD13A4 /* ExerciceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciceTests.swift; sourceTree = "<group>"; };
 		C9C0D1862419C00D00C4AA25 /* WorkoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCalculator.swift; sourceTree = "<group>"; };
 		C9C0D18A2419C48800C4AA25 /* WorkoutCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCalculatorTest.swift; sourceTree = "<group>"; };
 		C9FAB3D22419DB5600A6ADD0 /* UnitRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitRecordTests.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				C9C0D18A2419C48800C4AA25 /* WorkoutCalculatorTest.swift */,
 				C9FAB3D22419DB5600A6ADD0 /* UnitRecordTests.swift */,
 				C9B61D0B241ACF8000BD13A4 /* DailyRecordTests.swift */,
+				C9B61D0D241AD17200BD13A4 /* ExerciceTests.swift */,
 			);
 			path = ORMFitbodTests;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 			files = (
 				C98ED49F2419621E00601BB4 /* SimpleObservableTests.swift in Sources */,
 				C9C0D18B2419C48800C4AA25 /* WorkoutCalculatorTest.swift in Sources */,
+				C9B61D0E241AD17200BD13A4 /* ExerciceTests.swift in Sources */,
 				C9B61D0C241ACF8000BD13A4 /* DailyRecordTests.swift in Sources */,
 				C9FAB3D32419DB5600A6ADD0 /* UnitRecordTests.swift in Sources */,
 			);
