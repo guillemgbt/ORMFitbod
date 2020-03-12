@@ -38,5 +38,17 @@ class WorkoutCalculatorTest: XCTestCase {
                 
         XCTAssertEqual(result ?? 0.0, desiredResult, "Result do not match.")
     }
+    
+    func test1RMCalculationDivideZero() {
+        let reps = 37
+        let weight = 20
+        
+        if let result = try? WorkoutCalculator.compute1RM(weight: weight, reps: reps) {
+            XCTAssertFalse(result.isInfinite, "Result must not be infinite.")
+        } else {
+            XCTAssertTrue(false, "Result must exist.")
+        }
+                
+    }
 
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UnitRecord: NSObject {
+class UnitRecord: NSObject, OneRepMaxProvider {
     
     let sets: Int
     let reps: Int

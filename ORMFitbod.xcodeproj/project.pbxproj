@@ -31,6 +31,8 @@
 		C98ED4A724196F0C00601BB4 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A624196F0C00601BB4 /* DailyRecord.swift */; };
 		C98ED4AA2419707500601BB4 /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A92419707500601BB4 /* Collection+Ext.swift */; };
 		C98ED4AD241974C900601BB4 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4AC241974C900601BB4 /* String+Ext.swift */; };
+		C9B61D07241AC0D600BD13A4 /* OneRepMaxProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D06241AC0D600BD13A4 /* OneRepMaxProvider.swift */; };
+		C9B61D0A241AC83200BD13A4 /* PromiseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D09241AC83200BD13A4 /* PromiseObject.swift */; };
 		C9C0D1872419C00D00C4AA25 /* WorkoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0D1862419C00D00C4AA25 /* WorkoutCalculator.swift */; };
 		C9C0D18B2419C48800C4AA25 /* WorkoutCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0D18A2419C48800C4AA25 /* WorkoutCalculatorTest.swift */; };
 		C9FAB3D32419DB5600A6ADD0 /* UnitRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FAB3D22419DB5600A6ADD0 /* UnitRecordTests.swift */; };
@@ -84,6 +86,8 @@
 		C98ED4A624196F0C00601BB4 /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
 		C98ED4A92419707500601BB4 /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
 		C98ED4AC241974C900601BB4 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		C9B61D06241AC0D600BD13A4 /* OneRepMaxProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxProvider.swift; sourceTree = "<group>"; };
+		C9B61D09241AC83200BD13A4 /* PromiseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseObject.swift; sourceTree = "<group>"; };
 		C9C0D1862419C00D00C4AA25 /* WorkoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCalculator.swift; sourceTree = "<group>"; };
 		C9C0D18A2419C48800C4AA25 /* WorkoutCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCalculatorTest.swift; sourceTree = "<group>"; };
 		C9FAB3D22419DB5600A6ADD0 /* UnitRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitRecordTests.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				C916F76124180F0200133FED /* AppDelegate.swift */,
 				C916F76324180F0200133FED /* SceneDelegate.swift */,
 				C916F79424180FAD00133FED /* Utils */,
+				C9B61D05241ABFB600BD13A4 /* Interfaces */,
 				C916F79324180F7A00133FED /* Services */,
 				C916F79224180F7200133FED /* Models */,
 				C916F79124180F6A00133FED /* Views */,
@@ -290,6 +295,7 @@
 		C98ED49A2419563D00601BB4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C9B61D08241AC78F00BD13A4 /* PromiseObject */,
 				C9C0D1852419BF9C00C4AA25 /* WorkoutCalculator */,
 				C98ED49B2419564B00601BB4 /* Rx */,
 				C98ED48F2419535400601BB4 /* StreamReader */,
@@ -319,6 +325,22 @@
 				C98ED4AC241974C900601BB4 /* String+Ext.swift */,
 			);
 			path = String;
+			sourceTree = "<group>";
+		};
+		C9B61D05241ABFB600BD13A4 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				C9B61D06241AC0D600BD13A4 /* OneRepMaxProvider.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		C9B61D08241AC78F00BD13A4 /* PromiseObject */ = {
+			isa = PBXGroup;
+			children = (
+				C9B61D09241AC83200BD13A4 /* PromiseObject.swift */,
+			);
+			path = PromiseObject;
 			sourceTree = "<group>";
 		};
 		C9C0D1852419BF9C00C4AA25 /* WorkoutCalculator */ = {
@@ -468,6 +490,7 @@
 				C98ED495241953D300601BB4 /* TableViewExt.swift in Sources */,
 				C98ED4A324196E3900601BB4 /* Exercice.swift in Sources */,
 				C98ED499241954B900601BB4 /* UIViewController+Ext.swift in Sources */,
+				C9B61D0A241AC83200BD13A4 /* PromiseObject.swift in Sources */,
 				C916F76224180F0200133FED /* AppDelegate.swift in Sources */,
 				C98ED4A124196CBB00601BB4 /* Utils.swift in Sources */,
 				C916F76424180F0200133FED /* SceneDelegate.swift in Sources */,
@@ -477,6 +500,7 @@
 				C98ED49D2419568300601BB4 /* SimpleObservable.swift in Sources */,
 				C98ED496241953D300601BB4 /* TableViewCell+Extensions.swift in Sources */,
 				C916F7A924181AAA00133FED /* ExerciceService.swift in Sources */,
+				C9B61D07241AC0D600BD13A4 /* OneRepMaxProvider.swift in Sources */,
 				C98ED4A724196F0C00601BB4 /* DailyRecord.swift in Sources */,
 				C9C0D1872419C00D00C4AA25 /* WorkoutCalculator.swift in Sources */,
 				C916F7AF24181EDF00133FED /* ExerciceListViewController.swift in Sources */,

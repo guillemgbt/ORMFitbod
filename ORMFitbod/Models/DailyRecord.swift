@@ -8,17 +8,29 @@
 
 import Foundation
 
-class DailyRecord: NSObject {
+class DailyRecord: NSObject, OneRepMaxProvider {
 
     let date: Date
-    let global1RM: Float
-    var unitRecords = [UnitRecord]()
+    private var global1RM: Float
+    private var unitRecords = [UnitRecord]()
+    
     
     init(date: Date, unitRecord: UnitRecord) {
         self.date = date
         self.global1RM = unitRecord.get1RM()
         self.unitRecords.append(unitRecord)
     }
+    
+    func get1RM() -> Float {
+        return self.global1RM
+    }
+    
+    func addRecord(_ unitRecord: UnitRecord) {
+        self.global1RM = max(unitRecord.get1RM(), self.global1RM)
+        self.unitRecords.append(unitRecord)
+    }
+    
+    
     
     
 }

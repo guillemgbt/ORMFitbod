@@ -20,6 +20,8 @@ class WorkoutCalculator: NSObject {
             throw WorkoutCalculatorError.invalidInputValues
         }
         
-        return Float(weight)*36.0 / (37.0 - Float(reps))
+        let divisor = max(0.00001, (37.0 - Float(reps))) //To avoid 0 division
+                        
+        return Float(weight)*36.0 / divisor
     }
 }
