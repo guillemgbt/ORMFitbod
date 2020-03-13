@@ -94,12 +94,11 @@ class ExerciceServiceTests: XCTestCase {
 
 }
 
-class WorkoutParserMock: WorkoutParser {
+fileprivate class WorkoutParserMock: WorkoutParser {
     
     var workoutFile: WorkoutFile!
     
     override func parse(file: WorkoutFile = .workout1) -> PromiseObject<[Exercise]> {
         return super.parse(file: workoutFile)
     }
-    
 }

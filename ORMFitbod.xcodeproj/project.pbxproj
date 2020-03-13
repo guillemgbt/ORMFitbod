@@ -20,6 +20,7 @@
 		C916F7B024181EDF00133FED /* ExerciseListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C916F7AE24181EDF00133FED /* ExerciseListViewController.xib */; };
 		C916F7B324181F2000133FED /* workoutData1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C916F7B224181F2000133FED /* workoutData1.txt */; };
 		C916F7B5241823B600133FED /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F7B4241823B600133FED /* StreamReader.swift */; };
+		C92BF2E7241BFDE70079964D /* ExercisesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BF2E6241BFDE70079964D /* ExercisesListViewModelTests.swift */; };
 		C98ED495241953D300601BB4 /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED492241953D300601BB4 /* TableViewExt.swift */; };
 		C98ED496241953D300601BB4 /* TableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED494241953D300601BB4 /* TableViewCell+Extensions.swift */; };
 		C98ED499241954B900601BB4 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED498241954B900601BB4 /* UIViewController+Ext.swift */; };
@@ -80,6 +81,7 @@
 		C916F7AE24181EDF00133FED /* ExerciseListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseListViewController.xib; sourceTree = "<group>"; };
 		C916F7B224181F2000133FED /* workoutData1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workoutData1.txt; sourceTree = "<group>"; };
 		C916F7B4241823B600133FED /* StreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
+		C92BF2E6241BFDE70079964D /* ExercisesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesListViewModelTests.swift; sourceTree = "<group>"; };
 		C98ED492241953D300601BB4 /* TableViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
 		C98ED494241953D300601BB4 /* TableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		C98ED498241954B900601BB4 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				C9B61D0D241AD17200BD13A4 /* ExerciceTests.swift */,
 				C9B61D0F241AF86200BD13A4 /* WorkoutParserTests.swift */,
 				C990D407241B56710027A48C /* ExerciceServiceTests.swift */,
+				C92BF2E6241BFDE70079964D /* ExercisesListViewModelTests.swift */,
 			);
 			path = ORMFitbodTests;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				C9C0D18B2419C48800C4AA25 /* WorkoutCalculatorTest.swift in Sources */,
 				C9B61D0E241AD17200BD13A4 /* ExerciceTests.swift in Sources */,
 				C9B61D0C241ACF8000BD13A4 /* DailyRecordTests.swift in Sources */,
+				C92BF2E7241BFDE70079964D /* ExercisesListViewModelTests.swift in Sources */,
 				C9FAB3D32419DB5600A6ADD0 /* UnitRecordTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
