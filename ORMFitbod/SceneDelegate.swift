@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let exerciceListVC = ExerciceListViewController()
+        let exerciceListVC = ExerciseListViewController()
         let navigationVC = MainNavigationController(rootViewController: exerciceListVC)
 
         self.window = UIWindow(windowScene: windowScene)

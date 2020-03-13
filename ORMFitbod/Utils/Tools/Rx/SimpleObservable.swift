@@ -42,7 +42,6 @@ class SimpleObservable<T>: NSObject {
                 onUpdate(value)
             }
         }
-        
-        self.onUpdate = onUpdateUI
+        self.observe(onUpdateUI)
     }
 }

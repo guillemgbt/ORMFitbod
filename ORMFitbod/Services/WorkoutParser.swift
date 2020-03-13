@@ -37,7 +37,7 @@ struct WorkoutComponents {
 
 class WorkoutParser: NSObject {
     
-    func parse(file: WorkoutFile = .workout1) -> PromiseObject<[Exercice]> {
+    func parse(file: WorkoutFile = .workout1) -> PromiseObject<[Exercise]> {
         
         guard let stream = prepareStream(for: file) else {
             return PromiseObject(state: .error,
@@ -45,7 +45,7 @@ class WorkoutParser: NSObject {
                                  message: "Workout file not found.")
         }
         
-        var exercices = [Exercice]()
+        var exercises = [Exercise]()
             
         while let line = stream.nextLine() {
             
@@ -56,7 +56,7 @@ class WorkoutParser: NSObject {
                                     message: "Invalid workout file format.")
             }
             
-            guard parseWorkoutComponents(components, exercices: &exercices) else {
+            guard parseWorkoutComponents(components, exercises: &exercises) else {
                 return PromiseObject(state: .error,
                                      object: nil,
                                      message: "Invalid workout values.")
@@ -64,14 +64,14 @@ class WorkoutParser: NSObject {
         }
             
         return PromiseObject(state: .success,
-                             object: exercices)
+                             object: exercises)
     }
     
-    internal func parseWorkoutComponents(_ components: WorkoutComponents, exercices: inout [Exercice]) -> Bool {
+    internal func parseWorkoutComponents(_ components: WorkoutComponents, exercises: inout [Exercise]) -> Bool {
         
-        if let exercice = exercices.filter({ $0.name == components.name }).first {
+        if let exercise = exercises.filter({ $0.name == components.name }).first {
                 
-            if let dailyRecord = exercice.getRecord(for: components.date) {
+            if let dailyRecord = exercise.getRecord(for: components.date) {
                 
                 guard let unitRecord = unitRecordFrom(components) else {
                     Utils.printError(sender: self, message: "could not create exercice from components.")
@@ -86,17 +86,17 @@ class WorkoutParser: NSObject {
                     return false
                 }
                 
-                exercice.addRecord(dailyRecord)
+                exercise.addRecord(dailyRecord)
             }
                 
         } else {
             
-            guard let exercice = exerciceFrom(components) else {
-                Utils.printError(sender: self, message: "could not create exercice from components.")
+            guard let exercise = exerciseFrom(components) else {
+                Utils.printError(sender: self, message: "could not create exercise from components.")
                 return false
             }
             
-            exercices.append(exercice)
+            exercises.append(exercise)
         }
         
         return true
@@ -135,11 +135,11 @@ class WorkoutParser: NSObject {
                                  weight: weight)
     }
     
-    private func exerciceFrom(_ components: WorkoutComponents) -> Exercice? {
+    private func exerciseFrom(_ components: WorkoutComponents) -> Exercise? {
         guard let dailyRecord = self.dailyRecordFrom(components) else {
             return nil
         }
-        return Exercice(name: components.name, record: dailyRecord)
+        return Exercise(name: components.name, record: dailyRecord)
     }
     
     private func dailyRecordFrom(_ components: WorkoutComponents) -> DailyRecord? {

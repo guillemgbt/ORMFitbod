@@ -17,9 +17,9 @@ class ExerciceServiceTests: XCTestCase {
     func testLoadingOnFetch() {
         let workoutParser = WorkoutParserMock()
         workoutParser.workoutFile = .workout1
-        let service = ExerciceService(parser: workoutParser)
+        let service = ExerciseService(parser: workoutParser)
         
-        let observable = service.fetchExercices()
+        let observable = service.fetchExercises()
         
         XCTAssertEqual(observable.current().state, .loading, "Must be loading at first time.")
     }
@@ -27,9 +27,9 @@ class ExerciceServiceTests: XCTestCase {
     func testFetchValidWorkout() {
         let workoutParser = WorkoutParserMock()
         workoutParser.workoutFile = .workout1
-        let service = ExerciceService(parser: workoutParser)
+        let service = ExerciseService(parser: workoutParser)
         
-        let obesvable = service.fetchExercices()
+        let obesvable = service.fetchExercises()
         
         var triggers = 0
         let expect = expectation(description: "signal in background thread")
@@ -50,9 +50,9 @@ class ExerciceServiceTests: XCTestCase {
     func testFetchInalidWorkout() {
         let workoutParser = WorkoutParserMock()
         workoutParser.workoutFile = .invalidWorkout
-        let service = ExerciceService(parser: workoutParser)
+        let service = ExerciseService(parser: workoutParser)
         
-        let obesvable = service.fetchExercices()
+        let obesvable = service.fetchExercises()
         
         var triggers = 0
         let expect = expectation(description: "signal in background thread")
@@ -72,9 +72,9 @@ class ExerciceServiceTests: XCTestCase {
     func testFetchNotExistingWorkout() {
         let workoutParser = WorkoutParserMock()
         workoutParser.workoutFile = .nonExistingWorkout
-        let service = ExerciceService(parser: workoutParser)
+        let service = ExerciseService(parser: workoutParser)
         
-        let obesvable = service.fetchExercices()
+        let obesvable = service.fetchExercises()
         
         var triggers = 0
         let expect = expectation(description: "signal in background thread")
@@ -98,7 +98,7 @@ class WorkoutParserMock: WorkoutParser {
     
     var workoutFile: WorkoutFile!
     
-    override func parse(file: WorkoutFile = .workout1) -> PromiseObject<[Exercice]> {
+    override func parse(file: WorkoutFile = .workout1) -> PromiseObject<[Exercise]> {
         return super.parse(file: workoutFile)
     }
     

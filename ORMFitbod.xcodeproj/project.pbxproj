@@ -12,12 +12,12 @@
 		C916F76B24180F0300133FED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C916F76A24180F0300133FED /* Assets.xcassets */; };
 		C916F76E24180F0300133FED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C916F76C24180F0300133FED /* LaunchScreen.storyboard */; };
 		C916F78424180F0300133FED /* ORMFitbodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F78324180F0300133FED /* ORMFitbodUITests.swift */; };
-		C916F79C2418114D00133FED /* ExerciceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F79B2418114D00133FED /* ExerciceListViewModel.swift */; };
+		C916F79C2418114D00133FED /* ExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F79B2418114D00133FED /* ExerciseListViewModel.swift */; };
 		C916F79F2418132300133FED /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F79E2418132300133FED /* MainNavigationController.swift */; };
-		C916F7A924181AAA00133FED /* ExerciceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F7A824181AAA00133FED /* ExerciceService.swift */; };
+		C916F7A924181AAA00133FED /* ExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F7A824181AAA00133FED /* ExerciseService.swift */; };
 		C916F7AB24181AC000133FED /* WorkoutParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F7AA24181AC000133FED /* WorkoutParser.swift */; };
-		C916F7AF24181EDF00133FED /* ExerciceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F7AD24181EDF00133FED /* ExerciceListViewController.swift */; };
-		C916F7B024181EDF00133FED /* ExerciceListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C916F7AE24181EDF00133FED /* ExerciceListViewController.xib */; };
+		C916F7AF24181EDF00133FED /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F7AD24181EDF00133FED /* ExerciseListViewController.swift */; };
+		C916F7B024181EDF00133FED /* ExerciseListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C916F7AE24181EDF00133FED /* ExerciseListViewController.xib */; };
 		C916F7B324181F2000133FED /* workoutData1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C916F7B224181F2000133FED /* workoutData1.txt */; };
 		C916F7B5241823B600133FED /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F7B4241823B600133FED /* StreamReader.swift */; };
 		C98ED495241953D300601BB4 /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED492241953D300601BB4 /* TableViewExt.swift */; };
@@ -26,7 +26,7 @@
 		C98ED49D2419568300601BB4 /* SimpleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED49C2419568300601BB4 /* SimpleObservable.swift */; };
 		C98ED49F2419621E00601BB4 /* SimpleObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED49E2419621E00601BB4 /* SimpleObservableTests.swift */; };
 		C98ED4A124196CBB00601BB4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A024196CBB00601BB4 /* Utils.swift */; };
-		C98ED4A324196E3900601BB4 /* Exercice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A224196E3900601BB4 /* Exercice.swift */; };
+		C98ED4A324196E3900601BB4 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A224196E3900601BB4 /* Exercise.swift */; };
 		C98ED4A524196E7500601BB4 /* UnitRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A424196E7500601BB4 /* UnitRecord.swift */; };
 		C98ED4A724196F0C00601BB4 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A624196F0C00601BB4 /* DailyRecord.swift */; };
 		C98ED4AA2419707500601BB4 /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A92419707500601BB4 /* Collection+Ext.swift */; };
@@ -72,12 +72,12 @@
 		C916F77F24180F0300133FED /* ORMFitbodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORMFitbodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C916F78324180F0300133FED /* ORMFitbodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORMFitbodUITests.swift; sourceTree = "<group>"; };
 		C916F78524180F0300133FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C916F79B2418114D00133FED /* ExerciceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciceListViewModel.swift; sourceTree = "<group>"; };
+		C916F79B2418114D00133FED /* ExerciseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModel.swift; sourceTree = "<group>"; };
 		C916F79E2418132300133FED /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		C916F7A824181AAA00133FED /* ExerciceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciceService.swift; sourceTree = "<group>"; };
+		C916F7A824181AAA00133FED /* ExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseService.swift; sourceTree = "<group>"; };
 		C916F7AA24181AC000133FED /* WorkoutParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutParser.swift; sourceTree = "<group>"; };
-		C916F7AD24181EDF00133FED /* ExerciceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciceListViewController.swift; sourceTree = "<group>"; };
-		C916F7AE24181EDF00133FED /* ExerciceListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciceListViewController.xib; sourceTree = "<group>"; };
+		C916F7AD24181EDF00133FED /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
+		C916F7AE24181EDF00133FED /* ExerciseListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseListViewController.xib; sourceTree = "<group>"; };
 		C916F7B224181F2000133FED /* workoutData1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workoutData1.txt; sourceTree = "<group>"; };
 		C916F7B4241823B600133FED /* StreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
 		C98ED492241953D300601BB4 /* TableViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		C98ED49C2419568300601BB4 /* SimpleObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleObservable.swift; sourceTree = "<group>"; };
 		C98ED49E2419621E00601BB4 /* SimpleObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleObservableTests.swift; sourceTree = "<group>"; };
 		C98ED4A024196CBB00601BB4 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		C98ED4A224196E3900601BB4 /* Exercice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercice.swift; sourceTree = "<group>"; };
+		C98ED4A224196E3900601BB4 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		C98ED4A424196E7500601BB4 /* UnitRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitRecord.swift; sourceTree = "<group>"; };
 		C98ED4A624196F0C00601BB4 /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
 		C98ED4A92419707500601BB4 /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
@@ -194,8 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				C916F79D241812FA00133FED /* Navigation */,
-				C916F795241810C800133FED /* ExerciceList */,
-				C916F796241810EA00133FED /* ExerciceStats */,
+				C916F795241810C800133FED /* ExerciseList */,
+				C916F796241810EA00133FED /* ExerciseStats */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 		C916F79224180F7200133FED /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C98ED4A224196E3900601BB4 /* Exercice.swift */,
+				C98ED4A224196E3900601BB4 /* Exercise.swift */,
 				C98ED4A624196F0C00601BB4 /* DailyRecord.swift */,
 				C98ED4A424196E7500601BB4 /* UnitRecord.swift */,
 			);
@@ -213,7 +213,7 @@
 		C916F79324180F7A00133FED /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C916F7A824181AAA00133FED /* ExerciceService.swift */,
+				C916F7A824181AAA00133FED /* ExerciseService.swift */,
 				C916F7AA24181AC000133FED /* WorkoutParser.swift */,
 			);
 			path = Services;
@@ -229,21 +229,21 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		C916F795241810C800133FED /* ExerciceList */ = {
+		C916F795241810C800133FED /* ExerciseList */ = {
 			isa = PBXGroup;
 			children = (
-				C916F79B2418114D00133FED /* ExerciceListViewModel.swift */,
-				C916F7AD24181EDF00133FED /* ExerciceListViewController.swift */,
-				C916F7AE24181EDF00133FED /* ExerciceListViewController.xib */,
+				C916F79B2418114D00133FED /* ExerciseListViewModel.swift */,
+				C916F7AD24181EDF00133FED /* ExerciseListViewController.swift */,
+				C916F7AE24181EDF00133FED /* ExerciseListViewController.xib */,
 			);
-			path = ExerciceList;
+			path = ExerciseList;
 			sourceTree = "<group>";
 		};
-		C916F796241810EA00133FED /* ExerciceStats */ = {
+		C916F796241810EA00133FED /* ExerciseStats */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ExerciceStats;
+			path = ExerciseStats;
 			sourceTree = "<group>";
 		};
 		C916F79D241812FA00133FED /* Navigation */ = {
@@ -472,7 +472,7 @@
 			files = (
 				C916F7B324181F2000133FED /* workoutData1.txt in Resources */,
 				C916F76E24180F0300133FED /* LaunchScreen.storyboard in Resources */,
-				C916F7B024181EDF00133FED /* ExerciceListViewController.xib in Resources */,
+				C916F7B024181EDF00133FED /* ExerciseListViewController.xib in Resources */,
 				C9B61D12241AFC7600BD13A4 /* workoutDataInvalidLine.txt in Resources */,
 				C916F76B24180F0300133FED /* Assets.xcassets in Resources */,
 			);
@@ -504,7 +504,7 @@
 				C916F7AB24181AC000133FED /* WorkoutParser.swift in Sources */,
 				C98ED4A524196E7500601BB4 /* UnitRecord.swift in Sources */,
 				C98ED495241953D300601BB4 /* TableViewExt.swift in Sources */,
-				C98ED4A324196E3900601BB4 /* Exercice.swift in Sources */,
+				C98ED4A324196E3900601BB4 /* Exercise.swift in Sources */,
 				C98ED499241954B900601BB4 /* UIViewController+Ext.swift in Sources */,
 				C9B61D0A241AC83200BD13A4 /* PromiseObject.swift in Sources */,
 				C916F76224180F0200133FED /* AppDelegate.swift in Sources */,
@@ -512,14 +512,14 @@
 				C916F76424180F0200133FED /* SceneDelegate.swift in Sources */,
 				C98ED4AA2419707500601BB4 /* Collection+Ext.swift in Sources */,
 				C916F7B5241823B600133FED /* StreamReader.swift in Sources */,
-				C916F79C2418114D00133FED /* ExerciceListViewModel.swift in Sources */,
+				C916F79C2418114D00133FED /* ExerciseListViewModel.swift in Sources */,
 				C98ED49D2419568300601BB4 /* SimpleObservable.swift in Sources */,
 				C98ED496241953D300601BB4 /* TableViewCell+Extensions.swift in Sources */,
-				C916F7A924181AAA00133FED /* ExerciceService.swift in Sources */,
+				C916F7A924181AAA00133FED /* ExerciseService.swift in Sources */,
 				C9B61D07241AC0D600BD13A4 /* OneRepMaxProvider.swift in Sources */,
 				C98ED4A724196F0C00601BB4 /* DailyRecord.swift in Sources */,
 				C9C0D1872419C00D00C4AA25 /* WorkoutCalculator.swift in Sources */,
-				C916F7AF24181EDF00133FED /* ExerciceListViewController.swift in Sources */,
+				C916F7AF24181EDF00133FED /* ExerciseListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

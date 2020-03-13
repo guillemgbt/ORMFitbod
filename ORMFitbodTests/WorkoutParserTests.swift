@@ -53,9 +53,9 @@ class WorkoutParserTests: XCTestCase {
                                            reps: 4,
                                            weight: 10)
         
-        var exercices = [Exercice]()
+        var exercices = [Exercise]()
         
-        let success = parser.parseWorkoutComponents(components, exercices: &exercices)
+        let success = parser.parseWorkoutComponents(components, exercises: &exercices)
         
         XCTAssertTrue(success, "Must success")
         XCTAssertFalse(exercices.isEmpty, "Should parse exercice")
@@ -69,9 +69,9 @@ class WorkoutParserTests: XCTestCase {
                                            reps: 0,
                                            weight: 10)
         
-        var exercices = [Exercice]()
+        var exercices = [Exercise]()
         
-        let success = parser.parseWorkoutComponents(components, exercices: &exercices)
+        let success = parser.parseWorkoutComponents(components, exercises: &exercices)
         
         XCTAssertFalse(success, "Must success")
         XCTAssertTrue(exercices.isEmpty, "Should parse exercice")
@@ -91,10 +91,10 @@ class WorkoutParserTests: XCTestCase {
                                             reps: 1,
                                             weight: 15)
         
-        var exercices = [Exercice]()
+        var exercices = [Exercise]()
         
-        _ = parser.parseWorkoutComponents(components1, exercices: &exercices)
-        _ = parser.parseWorkoutComponents(components2, exercices: &exercices)
+        _ = parser.parseWorkoutComponents(components1, exercises: &exercices)
+        _ = parser.parseWorkoutComponents(components2, exercises: &exercices)
         
         XCTAssertTrue(exercices.count == 1, "Should only parse one exercice")
         XCTAssertTrue(exercices.first?.getDailyRecords().count == 1,
@@ -116,10 +116,10 @@ class WorkoutParserTests: XCTestCase {
                                             reps: 1,
                                             weight: 15)
         
-        var exercices = [Exercice]()
+        var exercices = [Exercise]()
         
-        _ = parser.parseWorkoutComponents(components1, exercices: &exercices)
-        _ = parser.parseWorkoutComponents(components2, exercices: &exercices)
+        _ = parser.parseWorkoutComponents(components1, exercises: &exercices)
+        _ = parser.parseWorkoutComponents(components2, exercises: &exercices)
         
         XCTAssertTrue(exercices.count == 1, "Should only parse one exercice")
         XCTAssertTrue(exercices.first?.getDailyRecords().count == 2,
@@ -141,10 +141,10 @@ class WorkoutParserTests: XCTestCase {
                                             reps: 1,
                                             weight: 15)
         
-        var exercices = [Exercice]()
+        var exercices = [Exercise]()
         
-        _ = parser.parseWorkoutComponents(components1, exercices: &exercices)
-        _ = parser.parseWorkoutComponents(components2, exercices: &exercices)
+        _ = parser.parseWorkoutComponents(components1, exercises: &exercices)
+        _ = parser.parseWorkoutComponents(components2, exercises: &exercices)
         
         XCTAssertTrue(exercices.count == 2, "Should only parse one exercice")
 

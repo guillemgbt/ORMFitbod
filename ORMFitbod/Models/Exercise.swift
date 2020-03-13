@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Exercice: NSObject, OneRepMaxProvider {
+class Exercise: NSObject, OneRepMaxProvider {
 
     let name: String
     private var global1RM: Float

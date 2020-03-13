@@ -8,9 +8,9 @@
 
 import Foundation
 
-class ExerciceService: NSObject {
+class ExerciseService: NSObject {
     
-    static let shared: ExerciceService = ExerciceService()
+    static let shared: ExerciseService = ExerciseService()
     
     private let workoutParser: WorkoutParser
     
@@ -18,16 +18,16 @@ class ExerciceService: NSObject {
         self.workoutParser = parser
     }
     
-    func fetchExercices() -> SimpleObservable<PromiseObject<[Exercice]>> {
+    func fetchExercises() -> SimpleObservable<PromiseObject<[Exercise]>> {
         
-        let loadingPromise: PromiseObject<[Exercice]> = PromiseObject(state: .loading)
-        let exercices: SimpleObservable<PromiseObject<[Exercice]>> = SimpleObservable(value: loadingPromise)
+        let loadingPromise: PromiseObject<[Exercise]> = PromiseObject(state: .loading)
+        let exercices: SimpleObservable<PromiseObject<[Exercise]>> = SimpleObservable(value: loadingPromise)
         
         DispatchQueue.global().async {
             let promiseExercices = self.workoutParser.parse()
             exercices.accept(promiseExercices)
         }
-                
+        
         return exercices
     }
 

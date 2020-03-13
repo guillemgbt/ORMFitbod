@@ -30,7 +30,7 @@ class ExerciceTests: XCTestCase {
     
     func testInitWithInvalidValues() {
         
-        let exercice = Exercice(name: "",
+        let exercice = Exercise(name: "",
                                 record: low1RMDailyRecord)
         
         XCTAssertNil(exercice, "Exercice should not initialise with empty name")
@@ -38,7 +38,7 @@ class ExerciceTests: XCTestCase {
     
     func testWithValidValues() {
         
-        let exercice = Exercice(name: "Press",
+        let exercice = Exercise(name: "Press",
                                 record: low1RMDailyRecord)
         
         XCTAssertNotNil(exercice, "Exercice should initialise with empty name")
@@ -46,7 +46,7 @@ class ExerciceTests: XCTestCase {
     
     func testAddingLow1RM() {
         
-        let exercice = Exercice(name: "Press",
+        let exercice = Exercise(name: "Press",
                                 record: low1RMDailyRecord)
         
         exercice?.addRecord(high1RMDailyRecord)
@@ -56,7 +56,7 @@ class ExerciceTests: XCTestCase {
     
     func testAddingHigh1RM() {
         
-        let exercice = Exercice(name: "Press",
+        let exercice = Exercise(name: "Press",
                                 record: high1RMDailyRecord)
         
         exercice?.addRecord(low1RMDailyRecord)
@@ -66,7 +66,7 @@ class ExerciceTests: XCTestCase {
     
     func testGetExistingDaily() {
         
-        let exercice = Exercice(name: "Press",
+        let exercice = Exercise(name: "Press",
                                 record: high1RMDailyRecord)
         exercice?.addRecord(low1RMDailyRecord)
         
@@ -77,7 +77,7 @@ class ExerciceTests: XCTestCase {
     
     func testGetNotExistingDaily() {
         
-        let exercice = Exercice(name: "Press",
+        let exercice = Exercise(name: "Press",
                                 record: high1RMDailyRecord)
         exercice?.addRecord(low1RMDailyRecord)
         
