@@ -11,22 +11,23 @@ import XCTest
 
 class ExercisesListViewModelTests: XCTestCase {
 
-    override func setUp() {}
+    fileprivate var mockService: ExerciseServiceMock!
+    var viewModel: ExerciseListViewModel!
+    
+    override func setUp() {
+        mockService = ExerciseServiceMock()
+        viewModel = ExerciseListViewModel(service: mockService)
+    }
     
     func testLoadingWhenRequest() {
-        
-        let service = ExerciseServiceMock()
-        let viewModel = ExerciseListViewModel(service: service)
-        
+                
         XCTAssertTrue(viewModel.isLoading.current(), "Must be loading when requesting exercises.")
         XCTAssertTrue(viewModel.exercisesUpdate.current(), "Must trigger updates in exercise promise.")
     }
     
     func testLoadingWhenRequestSucceed() {
         
-        let service = ExerciseServiceMock()
-        service.fail = false
-        let viewModel = ExerciseListViewModel(service: service)
+        mockService.fail = false
         
         let exp = expectation(description: "processing time")
         
@@ -47,9 +48,7 @@ class ExercisesListViewModelTests: XCTestCase {
     
     func testLoadingWhenRequestFailed() {
         
-        let service = ExerciseServiceMock()
-        service.fail = true
-        let viewModel = ExerciseListViewModel(service: service)
+        mockService.fail = true
         
         let exp = expectation(description: "processing time")
         
