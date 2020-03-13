@@ -31,6 +31,7 @@
 		C98ED4A724196F0C00601BB4 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A624196F0C00601BB4 /* DailyRecord.swift */; };
 		C98ED4AA2419707500601BB4 /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4A92419707500601BB4 /* Collection+Ext.swift */; };
 		C98ED4AD241974C900601BB4 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED4AC241974C900601BB4 /* String+Ext.swift */; };
+		C990D408241B56710027A48C /* ExerciceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990D407241B56710027A48C /* ExerciceServiceTests.swift */; };
 		C9B61D07241AC0D600BD13A4 /* OneRepMaxProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D06241AC0D600BD13A4 /* OneRepMaxProvider.swift */; };
 		C9B61D0A241AC83200BD13A4 /* PromiseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D09241AC83200BD13A4 /* PromiseObject.swift */; };
 		C9B61D0C241ACF8000BD13A4 /* DailyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B61D0B241ACF8000BD13A4 /* DailyRecordTests.swift */; };
@@ -90,6 +91,7 @@
 		C98ED4A624196F0C00601BB4 /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
 		C98ED4A92419707500601BB4 /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
 		C98ED4AC241974C900601BB4 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		C990D407241B56710027A48C /* ExerciceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciceServiceTests.swift; sourceTree = "<group>"; };
 		C9B61D06241AC0D600BD13A4 /* OneRepMaxProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxProvider.swift; sourceTree = "<group>"; };
 		C9B61D09241AC83200BD13A4 /* PromiseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseObject.swift; sourceTree = "<group>"; };
 		C9B61D0B241ACF8000BD13A4 /* DailyRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordTests.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				C9B61D0B241ACF8000BD13A4 /* DailyRecordTests.swift */,
 				C9B61D0D241AD17200BD13A4 /* ExerciceTests.swift */,
 				C9B61D0F241AF86200BD13A4 /* WorkoutParserTests.swift */,
+				C990D407241B56710027A48C /* ExerciceServiceTests.swift */,
 			);
 			path = ORMFitbodTests;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B61D10241AF86200BD13A4 /* WorkoutParserTests.swift in Sources */,
+				C990D408241B56710027A48C /* ExerciceServiceTests.swift in Sources */,
 				C98ED49F2419621E00601BB4 /* SimpleObservableTests.swift in Sources */,
 				C9C0D18B2419C48800C4AA25 /* WorkoutCalculatorTest.swift in Sources */,
 				C9B61D0E241AD17200BD13A4 /* ExerciceTests.swift in Sources */,

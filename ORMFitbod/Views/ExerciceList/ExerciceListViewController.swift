@@ -15,7 +15,6 @@ class ExerciceListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.loadData()
     }
 
 

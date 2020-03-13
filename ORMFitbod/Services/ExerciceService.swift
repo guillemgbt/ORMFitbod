@@ -18,11 +18,17 @@ class ExerciceService: NSObject {
         self.workoutParser = parser
     }
     
-    func fetchExercices() {
-        let obj = self.workoutParser.parse()
-        print(obj.state)
-        print(obj.message)
-        print(obj.object)
+    func fetchExercices() -> SimpleObservable<PromiseObject<[Exercice]>> {
+        
+        let loadingPromise: PromiseObject<[Exercice]> = PromiseObject(state: .loading)
+        let exercices: SimpleObservable<PromiseObject<[Exercice]>> = SimpleObservable(value: loadingPromise)
+        
+        DispatchQueue.global().async {
+            let promiseExercices = self.workoutParser.parse()
+            exercices.accept(promiseExercices)
+        }
+                
+        return exercices
     }
 
 }
