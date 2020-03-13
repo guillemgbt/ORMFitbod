@@ -21,6 +21,9 @@
 		C916F7B324181F2000133FED /* workoutData1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C916F7B224181F2000133FED /* workoutData1.txt */; };
 		C916F7B5241823B600133FED /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916F7B4241823B600133FED /* StreamReader.swift */; };
 		C92BF2E7241BFDE70079964D /* ExercisesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BF2E6241BFDE70079964D /* ExercisesListViewModelTests.swift */; };
+		C92BF2EC241C065E0079964D /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BF2EA241C065E0079964D /* ExerciseCell.swift */; };
+		C92BF2ED241C065E0079964D /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92BF2EB241C065E0079964D /* ExerciseCell.xib */; };
+		C92BF2F0241C0BBD0079964D /* ExerciseListCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BF2EF241C0BBD0079964D /* ExerciseListCellType.swift */; };
 		C98ED495241953D300601BB4 /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED492241953D300601BB4 /* TableViewExt.swift */; };
 		C98ED496241953D300601BB4 /* TableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED494241953D300601BB4 /* TableViewCell+Extensions.swift */; };
 		C98ED499241954B900601BB4 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED498241954B900601BB4 /* UIViewController+Ext.swift */; };
@@ -82,6 +85,9 @@
 		C916F7B224181F2000133FED /* workoutData1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workoutData1.txt; sourceTree = "<group>"; };
 		C916F7B4241823B600133FED /* StreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
 		C92BF2E6241BFDE70079964D /* ExercisesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesListViewModelTests.swift; sourceTree = "<group>"; };
+		C92BF2EA241C065E0079964D /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		C92BF2EB241C065E0079964D /* ExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
+		C92BF2EF241C0BBD0079964D /* ExerciseListCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListCellType.swift; sourceTree = "<group>"; };
 		C98ED492241953D300601BB4 /* TableViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
 		C98ED494241953D300601BB4 /* TableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		C98ED498241954B900601BB4 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 		C916F79124180F6A00133FED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C92BF2E8241C060D0079964D /* Cells */,
 				C916F79D241812FA00133FED /* Navigation */,
 				C916F795241810C800133FED /* ExerciseList */,
 				C916F796241810EA00133FED /* ExerciseStats */,
@@ -235,6 +242,7 @@
 		C916F795241810C800133FED /* ExerciseList */ = {
 			isa = PBXGroup;
 			children = (
+				C92BF2EE241C0B8D0079964D /* CellType */,
 				C916F79B2418114D00133FED /* ExerciseListViewModel.swift */,
 				C916F7AD24181EDF00133FED /* ExerciseListViewController.swift */,
 				C916F7AE24181EDF00133FED /* ExerciseListViewController.xib */,
@@ -264,6 +272,31 @@
 				C916F7B224181F2000133FED /* workoutData1.txt */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		C92BF2E8241C060D0079964D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C92BF2E9241C06160079964D /* ExerciseCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C92BF2E9241C06160079964D /* ExerciseCell */ = {
+			isa = PBXGroup;
+			children = (
+				C92BF2EA241C065E0079964D /* ExerciseCell.swift */,
+				C92BF2EB241C065E0079964D /* ExerciseCell.xib */,
+			);
+			path = ExerciseCell;
+			sourceTree = "<group>";
+		};
+		C92BF2EE241C0B8D0079964D /* CellType */ = {
+			isa = PBXGroup;
+			children = (
+				C92BF2EF241C0BBD0079964D /* ExerciseListCellType.swift */,
+			);
+			path = CellType;
 			sourceTree = "<group>";
 		};
 		C98ED48F2419535400601BB4 /* StreamReader */ = {
@@ -474,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C916F7B324181F2000133FED /* workoutData1.txt in Resources */,
+				C92BF2ED241C065E0079964D /* ExerciseCell.xib in Resources */,
 				C916F76E24180F0300133FED /* LaunchScreen.storyboard in Resources */,
 				C916F7B024181EDF00133FED /* ExerciseListViewController.xib in Resources */,
 				C9B61D12241AFC7600BD13A4 /* workoutDataInvalidLine.txt in Resources */,
@@ -509,7 +543,9 @@
 				C98ED495241953D300601BB4 /* TableViewExt.swift in Sources */,
 				C98ED4A324196E3900601BB4 /* Exercise.swift in Sources */,
 				C98ED499241954B900601BB4 /* UIViewController+Ext.swift in Sources */,
+				C92BF2EC241C065E0079964D /* ExerciseCell.swift in Sources */,
 				C9B61D0A241AC83200BD13A4 /* PromiseObject.swift in Sources */,
+				C92BF2F0241C0BBD0079964D /* ExerciseListCellType.swift in Sources */,
 				C916F76224180F0200133FED /* AppDelegate.swift in Sources */,
 				C98ED4A124196CBB00601BB4 /* Utils.swift in Sources */,
 				C916F76424180F0200133FED /* SceneDelegate.swift in Sources */,

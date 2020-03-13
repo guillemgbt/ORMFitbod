@@ -11,6 +11,8 @@ import UIKit
 class ExerciseListViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     private let viewModel = ExerciseListViewModel()
     
@@ -23,6 +25,7 @@ class ExerciseListViewController: UIViewController {
         super.viewDidLoad()
         
         setNavBatItems()
+        setTableView()
         bindObservables()
     }
 
@@ -30,6 +33,7 @@ class ExerciseListViewController: UIViewController {
         bindTitle()
         bindMessage()
         bindIsLoading()
+        bindExercicesUpdates()
     }
     
     private func bindTitle() {
@@ -57,6 +61,12 @@ class ExerciseListViewController: UIViewController {
         }
     }
     
+    private func bindExercicesUpdates() {
+        viewModel.exercisesUpdate.observeInUI { [weak self] (update) in
+            self?.tableView.reloadData()
+        }
+    }
+    
     private func setNavBatItems() {
         self.setActivityIndicator()
     }
@@ -64,6 +74,27 @@ class ExerciseListViewController: UIViewController {
     private func setActivityIndicator() {
         let barItem = UIBarButtonItem(customView: self.activityIndicator)
         self.navigationItem.setRightBarButton(barItem, animated: false)
+    }
+    
+    private func setTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        ExerciseListCellType.registerNibs(in: tableView)
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+
+}
+
+extension ExerciseListViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows()
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellType = viewModel.cellType(at: indexPath)
+        return cellType?.dequeueCell(for: tableView, at: indexPath) ?? UITableViewCell()
     }
 
 }

@@ -48,3 +48,18 @@ class ExerciseListViewModel: NSObject {
     }
 
 }
+
+///Extension to define table view related functionality
+extension ExerciseListViewModel {
+    
+    func numberOfRows() -> Int {
+        return exercicesObservable.current().object?.count ?? 0
+    }
+    
+    func cellType(at indexPath: IndexPath) -> ExerciseListCellType? {
+        guard let exercices = exercicesObservable.current().object else {
+            return nil
+        }
+        return .execiseCell(exercise: exercices[indexPath.row])
+    }
+}
