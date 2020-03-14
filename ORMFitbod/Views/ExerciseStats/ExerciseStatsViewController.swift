@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import SwiftCharts
 
 class ExerciseStatsViewController: UIViewController {
     
     @IBOutlet weak var exerciceNameLabel: UILabel!
     @IBOutlet weak var exercice1RMValueLabel: UILabel!
     @IBOutlet weak var exercice1RMDescriptionLabel: UILabel!
+    @IBOutlet weak var chartContainerView: UIView!
+    
+    var chart: BarsChart!
     
 
     private let viewModel: ExerciseStatsViewModel
@@ -39,6 +43,7 @@ class ExerciseStatsViewController: UIViewController {
         super.viewDidLoad()
 
         bindObservables()
+        setChart()
     }
     
     private func bindObservables() {
@@ -63,6 +68,33 @@ class ExerciseStatsViewController: UIViewController {
         viewModel.value1RM.observeInUI { [weak self] (value) in
             self?.exercice1RMValueLabel.text = value
         }
+    }
+    
+    private func setChart() {
+        let chartConfig = BarsChartConfig(
+            valsAxisConfig: ChartAxisConfig(from: 0, to: 8, by: 2)
+        )
+        
+        let frame = chartContainerView.bounds
+                
+        self.chart = BarsChart(
+                        frame: frame,
+                        chartConfig: chartConfig,
+                        xTitle: "X axis",
+                        yTitle: "Y axis",
+                        bars: [
+                            ("A", 2),
+                            ("B", 4.5),
+                            ("C", 3),
+                            ("D", 5.4),
+                            ("E", 6.8),
+                            ("F", 0.5)
+                        ],
+                        color: UIColor.red,
+                        barWidth: 20
+                    )
+
+        self.chartContainerView.addSubview(self.chart.view)
     }
 
 }
