@@ -30,10 +30,39 @@ class ExerciseStatsViewController: UIViewController {
         fatalError("init coder not implemented.")
     }
     
+    deinit {
+        //Check deinit for memory leaks prevention
+        Utils.printDebug(sender: self, message: "deinit")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        bindObservables()
     }
-
+    
+    private func bindObservables() {
+        bindName()
+        bindDescription1RM()
+        bindValue1RM()
+    }
+    
+    private func bindName() {
+        viewModel.name.observeInUI { [weak self] (name) in
+            self?.exerciceNameLabel.text = name
+        }
+    }
+    
+    private func bindDescription1RM() {
+        viewModel.description1RM.observeInUI { [weak self] (description) in
+            self?.exercice1RMDescriptionLabel.text = description
+        }
+    }
+    
+    private func bindValue1RM() {
+        viewModel.value1RM.observeInUI { [weak self] (value) in
+            self?.exercice1RMValueLabel.text = value
+        }
+    }
 
 }
