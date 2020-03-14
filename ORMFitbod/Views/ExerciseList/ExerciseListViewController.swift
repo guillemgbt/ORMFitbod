@@ -13,7 +13,6 @@ class ExerciseListViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
-    
     private let viewModel = ExerciseListViewModel()
     
     deinit {
@@ -28,12 +27,18 @@ class ExerciseListViewController: UIViewController {
         setTableView()
         bindObservables()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.deselectCurrentRow()
+    }
 
     private func bindObservables() {
         bindTitle()
         bindMessage()
         bindIsLoading()
         bindExercicesUpdates()
+        bindSelectedExercise()
     }
     
     private func bindTitle() {
@@ -67,6 +72,18 @@ class ExerciseListViewController: UIViewController {
         }
     }
     
+    
+    /// This is not the best way to handle the VC creation.
+    /// A better approach would be to have a cache or a local database and
+    /// initialise the VC with the model primary key and let its view model
+    /// refetch it.
+    private func bindSelectedExercise() {
+        viewModel.selectedExercise.observeInUI { [weak self] (_exercise) in
+            guard let exercise = _exercise else { return }
+            self?.push(ExerciseStatsViewController(exercise: exercise))
+        }
+    }
+    
     private func setNavBatItems() {
         self.setActivityIndicator()
     }
@@ -95,6 +112,10 @@ extension ExerciseListViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellType = viewModel.cellType(at: indexPath)
         return cellType?.dequeueCell(for: tableView, at: indexPath) ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.handleExerciseSelection(at: indexPath)
     }
 
 }

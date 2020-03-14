@@ -11,7 +11,6 @@ import UIKit
 extension UITableView {
     
     func registerNib<T: UITableViewCell>(_: T.Type) where T: ReusableView, T: NibLoadableView {
-        print(T.nibName)
         register(UINib(nibName: T.nibName, bundle: nil), forCellReuseIdentifier: T.nibName)
     }
         
@@ -22,5 +21,11 @@ extension UITableView {
         }
         
         return cell
+    }
+    
+    func deselectCurrentRow() {
+        if let indexPath = self.indexPathForSelectedRow {
+            self.deselectRow(at: indexPath, animated: true)
+        }
     }
 }

@@ -85,6 +85,32 @@ class ExercisesListViewModelTests: XCTestCase {
                      "Must not provide cellType")
     }
 
+    func testExerciseSelectionWhenLoading() {
+        
+        viewModel.handleExerciseSelection(at: IndexPath(row: 0, section: 0))
+        
+        XCTAssertNil(viewModel.selectedExercise.current(), "Must not select any exercise")
+    }
+    
+    func testExerciseSelectionWhenSuccess() {
+        
+        mockService.fail = false
+        
+        waitForResponse()
+        
+        viewModel.handleExerciseSelection(at: IndexPath(row: 0, section: 0))
+        XCTAssertNotNil(viewModel.selectedExercise.current(), "Must select the exercise")
+    }
+    
+    func testExerciseSelectionWhenError() {
+        
+        mockService.fail = true
+        
+        waitForResponse()
+        
+        viewModel.handleExerciseSelection(at: IndexPath(row: 0, section: 0))
+        XCTAssertNil(viewModel.selectedExercise.current(), "Must not select the exercise")
+    }
 
     private func waitForResponse() {
         let exp = expectation(description: "processing time")
@@ -94,7 +120,7 @@ class ExercisesListViewModelTests: XCTestCase {
         }
         wait(for: [exp], timeout: 1.2)
     }
-
+    
 }
 
 fileprivate class ExerciseServiceMock: ExerciseService {

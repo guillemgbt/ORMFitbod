@@ -17,6 +17,8 @@ class ExerciseListViewModel: NSObject {
     let isLoading: SimpleObservable<Bool> = SimpleObservable(value: false)
     let message: SimpleObservable<String?> = SimpleObservable(value: nil)
     let exercisesUpdate: SimpleObservable<Bool> = SimpleObservable(value: false)
+    let selectedExercise: SimpleObservable<Exercise?> = SimpleObservable(value: nil)
+    
     
     deinit {
         //Check deinit for memory leaks prevention
@@ -34,12 +36,6 @@ class ExerciseListViewModel: NSObject {
     func bindExercisesPromise() {
         
         exercicesObservable.observe { [weak self] (promise) in
-            print("***")
-            Utils.printDebug(sender: self, message: "State: \(promise.state)")
-            Utils.printDebug(sender: self, message: "Object: \(promise.object)")
-            Utils.printDebug(sender: self, message: "Message: \(promise.message)")
-            print("***")
-            
             self?.isLoading.accept(promise.state == .loading)
             self?.message.accept(promise.message)
             self?.exercisesUpdate.accept(true)
@@ -61,5 +57,13 @@ extension ExerciseListViewModel {
             return nil
         }
         return .execiseCell(exercise: exercices[indexPath.row])
+    }
+    
+    func handleExerciseSelection(at indexPath: IndexPath) {
+        guard let exercice = exercicesObservable.current().object?[safe: indexPath.row] else {
+            return
+        }
+        
+        self.selectedExercise.accept(exercice)
     }
 }
