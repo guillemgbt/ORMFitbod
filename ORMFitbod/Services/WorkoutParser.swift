@@ -79,7 +79,8 @@ class WorkoutParser: NSObject {
                 }
                 
                 dailyRecord.addRecord(unitRecord)
-                
+                exercise.update1RM(provider: unitRecord)
+
             } else {
                 guard let dailyRecord = dailyRecordFrom(components) else {
                     Utils.printError(sender: self, message: "could not create daily from components.")

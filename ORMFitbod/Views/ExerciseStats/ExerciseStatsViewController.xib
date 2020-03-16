@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExerciseStatsViewController" customModule="ORMFitbod" customModuleProvider="target">
             <connections>
                 <outlet property="chartContainerView" destination="Pod-b3-tGS" id="6Y4-wX-MoJ"/>
+                <outlet property="chartInfoLabel" destination="pTB-bT-cCt" id="Ctq-Za-Iyk"/>
                 <outlet property="exercice1RMDescriptionLabel" destination="nuY-mO-BNN" id="LEF-9A-qxj"/>
                 <outlet property="exercice1RMValueLabel" destination="XYX-lt-8HV" id="gQH-cm-2Eb"/>
                 <outlet property="exerciceNameLabel" destination="qqx-eJ-cbh" id="V5g-Xs-RBf"/>
@@ -22,22 +23,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEj-oS-Ksa">
-                    <rect key="frame" x="16" y="60" width="343" height="55.333333333333343"/>
+                    <rect key="frame" x="16" y="60" width="343" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back Squat" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqx-eJ-cbh">
-                            <rect key="frame" x="0.0" y="0.0" width="108.66666666666667" height="26.666666666666668"/>
+                            <rect key="frame" x="0.0" y="0.0" width="108.66666666666667" height="26.333333333333332"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="382" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYX-lt-8HV">
-                            <rect key="frame" x="303" y="0.0" width="40" height="26.666666666666668"/>
+                            <rect key="frame" x="303" y="0.0" width="40" height="26.333333333333332"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Rep Max • lbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuY-mO-BNN">
-                            <rect key="frame" x="0.0" y="34.333333333333329" width="141" height="21"/>
+                            <rect key="frame" x="0.0" y="34" width="141" height="21"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -58,23 +59,41 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pod-b3-tGS">
-                    <rect key="frame" x="16" y="239.66666666666663" width="343" height="343"/>
+                    <rect key="frame" x="0.0" y="139" width="375" height="575"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MS-8a-iJi">
+                    <rect key="frame" x="0.0" y="714" width="375" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll chart to see all records" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTB-bT-cCt">
+                            <rect key="frame" x="16" y="22" width="343" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="Pod-b3-tGS" secondAttribute="height" multiplier="1:1" id="h5c-GH-d33"/>
+                        <constraint firstItem="pTB-bT-cCt" firstAttribute="width" secondItem="4MS-8a-iJi" secondAttribute="width" constant="-32" id="eBT-Wi-7bN"/>
+                        <constraint firstItem="pTB-bT-cCt" firstAttribute="centerY" secondItem="4MS-8a-iJi" secondAttribute="centerY" id="smU-Ld-UMU"/>
+                        <constraint firstItem="pTB-bT-cCt" firstAttribute="centerX" secondItem="4MS-8a-iJi" secondAttribute="centerX" id="y0k-GX-zde"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="JEj-oS-Ksa" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-32" id="EGA-ZD-gKf"/>
+                <constraint firstItem="Pod-b3-tGS" firstAttribute="top" secondItem="JEj-oS-Ksa" secondAttribute="bottom" constant="23.999999999999972" id="ORS-hH-I3N"/>
+                <constraint firstItem="Pod-b3-tGS" firstAttribute="centerX" secondItem="JEj-oS-Ksa" secondAttribute="centerX" id="OSr-x9-awA"/>
+                <constraint firstItem="Pod-b3-tGS" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Q8d-GQ-PE0"/>
+                <constraint firstItem="4MS-8a-iJi" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="S4w-cF-dRR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4MS-8a-iJi" secondAttribute="bottom" id="SBv-cy-Yhq"/>
+                <constraint firstItem="4MS-8a-iJi" firstAttribute="top" secondItem="Pod-b3-tGS" secondAttribute="bottom" id="Vlr-lM-R0e"/>
                 <constraint firstItem="JEj-oS-Ksa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="ayY-8X-b1A"/>
-                <constraint firstItem="Pod-b3-tGS" firstAttribute="centerX" secondItem="JEj-oS-Ksa" secondAttribute="centerX" id="gpc-dq-vYu"/>
-                <constraint firstItem="Pod-b3-tGS" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="lab-vz-r0e"/>
-                <constraint firstItem="Pod-b3-tGS" firstAttribute="width" secondItem="JEj-oS-Ksa" secondAttribute="width" id="nW0-Qb-m2T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Pod-b3-tGS" secondAttribute="bottom" constant="64" id="h4S-tJ-8nj"/>
                 <constraint firstItem="JEj-oS-Ksa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="shV-ia-8fe"/>
+                <constraint firstItem="4MS-8a-iJi" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="unI-VQ-rr3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="121"/>
+            <point key="canvasLocation" x="138.40000000000001" y="120.44334975369459"/>
         </view>
     </objects>
 </document>

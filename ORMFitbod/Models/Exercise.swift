@@ -30,7 +30,7 @@ class Exercise: NSObject, OneRepMaxProvider {
     func getDailyRecords() -> [DailyRecord] {
         return dailyRecords
     }
-    
+        
     func update1RM(provider: OneRepMaxProvider) {
         self.global1RM = max(provider.get1RM(), self.global1RM)
     }

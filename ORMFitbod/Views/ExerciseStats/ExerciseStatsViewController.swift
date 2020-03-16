@@ -9,14 +9,16 @@
 import UIKit
 import SwiftCharts
 
+
 class ExerciseStatsViewController: UIViewController {
     
     @IBOutlet weak var exerciceNameLabel: UILabel!
     @IBOutlet weak var exercice1RMValueLabel: UILabel!
     @IBOutlet weak var exercice1RMDescriptionLabel: UILabel!
     @IBOutlet weak var chartContainerView: UIView!
+    @IBOutlet weak var chartInfoLabel: UILabel!
     
-    var chart: BarsChart!
+    var chart: Chart!
     
 
     private let viewModel: ExerciseStatsViewModel
@@ -43,13 +45,16 @@ class ExerciseStatsViewController: UIViewController {
         super.viewDidLoad()
 
         bindObservables()
-        setChart()
+        DispatchQueue.main.async { //So it creates the chart when view is autolayout
+            self.viewModel.prepareChartInBackground(bounds: self.chartContainerView.bounds)
+        }
     }
     
     private func bindObservables() {
         bindName()
         bindDescription1RM()
         bindValue1RM()
+        bindChart()
     }
     
     private func bindName() {
@@ -70,31 +75,12 @@ class ExerciseStatsViewController: UIViewController {
         }
     }
     
-    private func setChart() {
-        let chartConfig = BarsChartConfig(
-            valsAxisConfig: ChartAxisConfig(from: 0, to: 8, by: 2)
-        )
-        
-        let frame = chartContainerView.bounds
-                
-        self.chart = BarsChart(
-                        frame: frame,
-                        chartConfig: chartConfig,
-                        xTitle: "X axis",
-                        yTitle: "Y axis",
-                        bars: [
-                            ("A", 2),
-                            ("B", 4.5),
-                            ("C", 3),
-                            ("D", 5.4),
-                            ("E", 6.8),
-                            ("F", 0.5)
-                        ],
-                        color: UIColor.red,
-                        barWidth: 20
-                    )
-
-        self.chartContainerView.addSubview(self.chart.view)
+    private func bindChart() {
+        viewModel.chart.observeInUI { [weak self] (_chart) in
+            guard let chart = _chart else { return }
+            _ = self?.chartContainerView.subviews.map({ $0.removeFromSuperview() })
+            self?.chartContainerView.addSubview(chart.view)
+        }
     }
-
+    
 }

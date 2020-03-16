@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		C92BF2EC241C065E0079964D /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BF2EA241C065E0079964D /* ExerciseCell.swift */; };
 		C92BF2ED241C065E0079964D /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92BF2EB241C065E0079964D /* ExerciseCell.xib */; };
 		C92BF2F0241C0BBD0079964D /* ExerciseListCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BF2EF241C0BBD0079964D /* ExerciseListCellType.swift */; };
+		C96036DB241F61FB0041AD21 /* ExerciseStatsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96036DA241F61FB0041AD21 /* ExerciseStatsViewModelTests.swift */; };
 		C98ED495241953D300601BB4 /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED492241953D300601BB4 /* TableViewExt.swift */; };
 		C98ED496241953D300601BB4 /* TableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED494241953D300601BB4 /* TableViewCell+Extensions.swift */; };
 		C98ED499241954B900601BB4 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98ED498241954B900601BB4 /* UIViewController+Ext.swift */; };
@@ -101,6 +102,7 @@
 		C92BF2EA241C065E0079964D /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		C92BF2EB241C065E0079964D /* ExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
 		C92BF2EF241C0BBD0079964D /* ExerciseListCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListCellType.swift; sourceTree = "<group>"; };
+		C96036DA241F61FB0041AD21 /* ExerciseStatsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStatsViewModelTests.swift; sourceTree = "<group>"; };
 		C98ED492241953D300601BB4 /* TableViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
 		C98ED494241953D300601BB4 /* TableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		C98ED498241954B900601BB4 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -177,7 +179,6 @@
 				4FE4C397A497E35977D2E0E3 /* Pods-ORMFitbodTests.debug.xcconfig */,
 				905E6AA3B6737736EB44E2E1 /* Pods-ORMFitbodTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -233,6 +234,7 @@
 				C9B61D0F241AF86200BD13A4 /* WorkoutParserTests.swift */,
 				C990D407241B56710027A48C /* ExerciceServiceTests.swift */,
 				C92BF2E6241BFDE70079964D /* ExercisesListViewModelTests.swift */,
+				C96036DA241F61FB0041AD21 /* ExerciseStatsViewModelTests.swift */,
 			);
 			path = ORMFitbodTests;
 			sourceTree = "<group>";
@@ -735,6 +737,7 @@
 				C9B61D0C241ACF8000BD13A4 /* DailyRecordTests.swift in Sources */,
 				C92BF2E7241BFDE70079964D /* ExercisesListViewModelTests.swift in Sources */,
 				C9FAB3D32419DB5600A6ADD0 /* UnitRecordTests.swift in Sources */,
+				C96036DB241F61FB0041AD21 /* ExerciseStatsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
