@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExerciseListViewController: UIViewController {
+class ExerciseListViewController: ORMThemeViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!

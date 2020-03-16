@@ -10,7 +10,7 @@ import UIKit
 import SwiftCharts
 
 
-class ExerciseStatsViewController: UIViewController {
+class ExerciseStatsViewController: ORMThemeViewController {
     
     @IBOutlet weak var exerciceNameLabel: UILabel!
     @IBOutlet weak var exercice1RMValueLabel: UILabel!
@@ -44,10 +44,19 @@ class ExerciseStatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setTheme()
         bindObservables()
         DispatchQueue.main.async { //So it creates the chart when view is autolayout
             self.viewModel.prepareChartInBackground(bounds: self.chartContainerView.bounds)
         }
+    }
+    
+    private func setTheme() {
+        let theme = ThemeManager.shared.current()
+        self.exerciceNameLabel.textColor = theme.titleTextColor
+        self.exercice1RMValueLabel.textColor = theme.titleTextColor
+        self.exercice1RMDescriptionLabel.textColor = theme.subtitleTextColor
+        self.chartInfoLabel.textColor = theme.subtitleTextColor
     }
     
     private func bindObservables() {

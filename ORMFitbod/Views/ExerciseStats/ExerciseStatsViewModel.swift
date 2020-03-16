@@ -19,6 +19,12 @@ class ExerciseStatsViewModel: NSObject {
     let chartInfo = SimpleObservable<String>(value: "")
     let chart = SimpleObservable<Chart?>(value: nil)
     
+    private var theme: Theme {
+        get {
+            ThemeManager.shared.current()
+        }
+    }
+    
     init(exercise: Exercise) {
         self.exercise = exercise
         super.init()
@@ -46,29 +52,8 @@ class ExerciseStatsViewModel: NSObject {
     
     func prepareChart(bounds: CGRect) {
         
-        let records = exercise.getDailyRecords()
-        
-        let labelSettings = ChartLabelSettings(font: labelFont())
-        
-        let (min1RM, max1RM) = oneRepMaxLimits()
-        let (minDate, maxDate) = dateLimits()
-        
-        let chartPoints = records.map({ self.createChartPoint(date: $0.date,
-                                                              value: Double($0.get1RM()))})
-
-        let yValues = stride(from: min1RM,
-                             through: max1RM,
-                             by: 10).map {ChartAxisValueDouble($0)}
-
-        let xValues = createDateStride(from: minDate,
-                                       to: maxDate).map({ createDateAxisValue($0) })
-        
-        let xModel = ChartAxisModel(axisValues: xValues,
-                                    axisTitleLabel: ChartAxisLabel(text: "Date",
-                                                                   settings: labelSettings))
-        let yModel = ChartAxisModel(axisValues: yValues,
-                                    axisTitleLabel: ChartAxisLabel(text: "1RM",
-                                                                   settings: labelSettings.defaultVertical()))
+        let xModel = prepareXModel()
+        let yModel = prepareYModel()
         
         let chartFrame = createChartFrame(bounds)
         var chartSettings = ExerciseStatsViewModel.iPhoneChartSettingsWithPanZoom
@@ -83,11 +68,11 @@ class ExerciseStatsViewModel: NSObject {
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
         let (xAxisLayer, yAxisLayer, innerFrame) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
         
-        let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: UIColor.red, lineWidth: 2, animDuration: 1, animDelay: 0)
+        let lineLayer = prepareLineLayer(xAxisLayer: xAxisLayer,
+                                              yAxisLayer: yAxisLayer)
         
-        let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, lineModels: [lineModel], delayInit: true)
-        
-        let guidelinesLayerSettings = ChartGuideLinesLayerSettings(linesColor: UIColor.black, linesWidth: 0.3)
+        let guidelinesLayerSettings = ChartGuideLinesLayerSettings(linesColor: theme.subtitleTextColor,
+                                                                   linesWidth: 0.3)
         let guidelinesLayer = ChartGuideLinesLayer(xAxisLayer: xAxisLayer, yAxisLayer: yAxisLayer, settings: guidelinesLayerSettings)
         
         //SwiftCharts instantiates view at the time of Chart initialisation.
@@ -101,16 +86,67 @@ class ExerciseStatsViewModel: NSObject {
                     xAxisLayer,
                     yAxisLayer,
                     guidelinesLayer,
-                    chartPointsLineLayer]
+                    lineLayer]
             )
             
-            chartPointsLineLayer.initScreenLines(chart)
+            lineLayer.initScreenLines(chart)
                     
             self.chart.accept(chart)
         }
     }
     
-    func createChartFrame(_ containerBounds: CGRect) -> CGRect {
+    private func prepareYModel() -> ChartAxisModel {
+        let (min1RM, max1RM) = oneRepMaxLimits()
+        
+        let yLabelSettings = ChartLabelSettings(font: labelFont(),
+                                                fontColor: theme.subtitleTextColor)
+    
+        let yValues = stride(from: min1RM,
+                             through: max1RM,
+                             by: 10).map {ChartAxisValueDouble($0,
+                                                               labelSettings: yLabelSettings)}
+        
+        
+        let labelSettings = ChartLabelSettings(font: labelFont(),
+                                               fontColor: theme.titleTextColor)
+
+        return ChartAxisModel(axisValues: yValues,
+                              axisTitleLabel: ChartAxisLabel(text: "1RM",
+                                                             settings: labelSettings.defaultVertical()))
+
+    }
+    
+    private func prepareXModel() -> ChartAxisModel {
+        let (minDate, maxDate) = dateLimits()
+
+        let xValues = createDateStride(from: minDate,
+                                       to: maxDate).map({ createDateAxisValue($0) })
+        let labelSettings = ChartLabelSettings(font: labelFont(),
+                                               fontColor: theme.titleTextColor)
+        return ChartAxisModel(axisValues: xValues,
+                              axisTitleLabel: ChartAxisLabel(text: "Date",
+                                                             settings: labelSettings))
+    }
+    
+    private func prepareLineLayer(xAxisLayer: ChartAxisLayer, yAxisLayer: ChartAxisLayer) -> ChartPointsLineLayer<ChartPoint> {
+        let records = exercise.getDailyRecords()
+                
+        let chartPoints = records.map({ self.createChartPoint(date: $0.date,
+                                                              value: Double($0.get1RM()))})
+        
+        let lineModel = ChartLineModel(chartPoints: chartPoints,
+                                       lineColor: theme.mainColor,
+                                       lineWidth: 2,
+                                       animDuration: 1,
+                                       animDelay: 0)
+        
+        return ChartPointsLineLayer(xAxis: xAxisLayer.axis,
+                                    yAxis: yAxisLayer.axis,
+                                    lineModels: [lineModel],
+                                    delayInit: true)
+    }
+    
+    private func createChartFrame(_ containerBounds: CGRect) -> CGRect {
         return CGRect(x: 0, y: 20, width: containerBounds.size.width, height: containerBounds.size.height - 20)
     }
     
@@ -127,6 +163,7 @@ class ExerciseStatsViewModel: NSObject {
         let displayFormatter = DateFormatter()
         displayFormatter.dateFormat = "MMM dd yyyy"
         let labelSettings = ChartLabelSettings(font: labelFont(),
+                                               fontColor: theme.subtitleTextColor,
                                                rotation: 90,
                                                rotationKeep: .top)
         return ChartAxisValueDate(date: date,
@@ -148,13 +185,13 @@ class ExerciseStatsViewModel: NSObject {
         return dateStride
     }
     
-    private func oneRepMaxLimits() -> (Int, Int) {
+    internal func oneRepMaxLimits() -> (Int, Int) {
         let max = Int(exercise.getDailyRecords().map({ $0.get1RM() }).max() ?? 0) + 10
         let min = Int(exercise.getDailyRecords().map({ $0.get1RM() }).min() ?? 10) - 10
         return (min, max)
     }
     
-    private func dateLimits() -> (Date, Date) {
+    internal func dateLimits() -> (Date, Date) {
         let minDate = exercise.getDailyRecords().map({ $0.date }).min() ?? Date()
         let maxDate = exercise.getDailyRecords().map({ $0.date }).max() ?? Date()
         return (minDate, maxDate)
