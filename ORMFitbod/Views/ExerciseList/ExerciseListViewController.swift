@@ -43,7 +43,6 @@ class ExerciseListViewController: ORMThemeViewController {
     
     private func bindTitle() {
         viewModel.title.observeInUI { [weak self] (title) in
-            Utils.printDebug(sender: self, message: "title update: \(title)")
             self?.title = title
         }
     }
@@ -51,7 +50,6 @@ class ExerciseListViewController: ORMThemeViewController {
     private func bindMessage() {
         viewModel.message.observeInUI { [weak self] (_message) in
             if let message = _message {
-                Utils.printDebug(sender: self, message: "message update: \(message)")
                 self?.showMessage(title: "", message: message)
             }
         }
@@ -59,8 +57,6 @@ class ExerciseListViewController: ORMThemeViewController {
     
     private func bindIsLoading() {
         viewModel.isLoading.observeInUI { [weak self] (isLoading) in
-            Utils.printDebug(sender: self, message: "isLoading update: \(isLoading)")
-
             isLoading ? self?.activityIndicator.startAnimating() :
                 self?.activityIndicator.stopAnimating()
         }

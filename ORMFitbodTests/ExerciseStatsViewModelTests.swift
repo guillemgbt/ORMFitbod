@@ -15,7 +15,7 @@ class ExerciseStatsViewModelTests: XCTestCase {
     var viewModel: ExerciseStatsViewModel!
     
     override func setUp() {
-        viewModel = ExerciseStatsViewModel(exercise: testExercice())
+        viewModel = ExerciseStatsViewModel(exercise: createTestExercise())
     }
     
     func testAsyncChartSetUp() {
@@ -31,7 +31,7 @@ class ExerciseStatsViewModelTests: XCTestCase {
         
         let (min, max) = viewModel.oneRepMaxLimits()
         
-        let oneRMs = testExercice().getDailyRecords().map({ $0.get1RM() })
+        let oneRMs = createTestExercise().getDailyRecords().map({ $0.get1RM() })
                 
         oneRMs.forEach { (oneRM) in
             XCTAssertLessThan(Float(min), oneRM)
@@ -39,7 +39,7 @@ class ExerciseStatsViewModelTests: XCTestCase {
         }
     }
     
-    private func testExercice() -> Exercise {
+    private func createTestExercise() -> Exercise {
         
         let daily1 = DailyRecord(date: Date(timeIntervalSince1970: 100),
                                  unitRecord: UnitRecord(sets: 1,
