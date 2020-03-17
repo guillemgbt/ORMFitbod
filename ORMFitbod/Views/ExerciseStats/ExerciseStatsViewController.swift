@@ -18,9 +18,6 @@ class ExerciseStatsViewController: ORMThemeViewController {
     @IBOutlet weak var chartContainerView: UIView!
     @IBOutlet weak var chartInfoLabel: UILabel!
     
-    var chart: Chart!
-    
-
     private let viewModel: ExerciseStatsViewModel
     
     /// This is not the best way to handle the VC creation.

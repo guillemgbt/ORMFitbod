@@ -69,11 +69,13 @@ class ExerciseStatsViewModel: NSObject {
         let (xAxisLayer, yAxisLayer, innerFrame) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
         
         let lineLayer = prepareLineLayer(xAxisLayer: xAxisLayer,
-                                              yAxisLayer: yAxisLayer)
+                                         yAxisLayer: yAxisLayer)
         
         let guidelinesLayerSettings = ChartGuideLinesLayerSettings(linesColor: theme.subtitleTextColor,
                                                                    linesWidth: 0.3)
-        let guidelinesLayer = ChartGuideLinesLayer(xAxisLayer: xAxisLayer, yAxisLayer: yAxisLayer, settings: guidelinesLayerSettings)
+        let guidelinesLayer = ChartGuideLinesLayer(xAxisLayer: xAxisLayer,
+                                                   yAxisLayer: yAxisLayer,
+                                                   settings: guidelinesLayerSettings)
         
         //SwiftCharts instantiates view at the time of Chart initialisation.
         //Must be in main thread
